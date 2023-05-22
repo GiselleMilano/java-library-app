@@ -1,0 +1,17 @@
+[
+  {
+    "title": "libro1",
+    "author": "libro1",
+    "year": 2000
+  },
+  {
+    "title": "libro2",
+    "author": "libro2",
+    "year": 2002
+  },
+  {
+    "title": "libro3",
+    "author": "libro3",
+    "year": 2003
+  }
+]
