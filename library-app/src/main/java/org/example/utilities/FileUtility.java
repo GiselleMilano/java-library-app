@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class FileUtility {
@@ -34,7 +35,7 @@ public class FileUtility {
     public List<Book> deserializeJson(File file) {
         String json = readFile(file);
 
-        if (json != "") {
+        if (!Objects.equals(json, "")) {
             Gson gson = new Gson();
             Type listBooksType = new com.google.gson.reflect.TypeToken<List<Book>>() {
             }.getType();

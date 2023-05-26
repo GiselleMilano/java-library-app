@@ -23,20 +23,23 @@ public class Library {
     }
 
     public Book getBookByAuthor(String author) {
-        System.out.println("Entro a getBookByAuthor");
-        return null;
+        return getBooks().stream()
+            .filter(book -> author.equals(book.getAuthor()))
+            .findAny()
+            .orElse(null);
     }
 
     public Book getBookByTitle(String title) {
-        System.out.println("Entro a getBookByTitle");
-        return null;
+        return getBooks().stream()
+            .filter(book -> title.equals(book.getTitle()))
+            .findAny()
+            .orElse(null);
     }
 
     public void setBooks(List<Book> books) {
         this.books = books;
     }
 
-    @Override
     public String toString() {
         return "Library{" + books + '}';
     }

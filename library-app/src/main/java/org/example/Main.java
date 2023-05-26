@@ -19,31 +19,35 @@ public class Main {
 
             optionSelected = input.nextInt();
 
+            Scanner switchInput = new Scanner(System.in);
+
             switch (optionSelected) {
                 case 1:
-                    Scanner newinput = new Scanner(System.in);
                     Book book = new Book();
 
                     System.out.print("Title: ");
-                    book.setTitle(newinput.nextLine());
-
+                    book.setTitle(switchInput.nextLine());
                     System.out.print("Author: ");
-                    book.setAuthor(newinput.nextLine());
-
+                    book.setAuthor(switchInput.nextLine());
                     System.out.print("Year: ");
-                    book.setYear(newinput.nextInt());
+                    book.setYear(switchInput.nextInt());
 
                     library.saveBook(book);
                     break;
+
                 case 2:
                     library.setBooks(library.getBooks());
                     System.out.println(library.toString());
                     break;
+
                 case 3:
-                    library.getBookByAuthor(null);
+                    System.out.print("Author: ");
+                    System.out.println(library.getBookByAuthor(switchInput.nextLine()));
                     break;
+
                 case 4:
-                    library.getBookByTitle(null);
+                    System.out.print("Title: ");
+                    System.out.println(library.getBookByTitle(switchInput.nextLine()));
                     break;
             }
         }
